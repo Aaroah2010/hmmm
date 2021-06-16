@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <style>
+            .btn-img{
+                width: 100px ;
+                height: 100px;
+                padding: 10px ;
+            }
+            #time{
+                font-size: 200px;
+                text-align: center ;
+            }#btn-starter{
+                margin-left: 475px;
+            }*{
+                margin-top: 0PX;
+            }#h1{
+                position:fixed;
+                top: 405px;
+                left: 506px;
+                font-size: 30px;
+                font-family:monospace;
+            }#h2{
+                position:fixed;
+                top: 405px;
+                left: 626px;
+                font-size: 30px;
+                font-family:monospace;
+            }#h3{
+                position:fixed;
+                top: 405px;
+                left: 751px;
+                font-size: 30px;
+                font-family:monospace;
+            }
+        </style>
+<title>Stopwatch 2.0</title>
+    </head>
+    <body>
+      <H1 id="time">00:00:00</H1>  
+      <img src="OIP (1).jpg" alt="Start" id="btn-starter"class="btn-img" onclick="start()">
+      <img src="OIP (1).jpg" alt="Start" class="btn-img" onclick="pause()">
+      <img src="OIP (1).jpg" alt="Start" class="btn-img" onclick="reset()">
+      <h3 id="h1">Start</h3>
+      <h3 id="h2">Pause</h3>
+      <h3 id="h3">Reset</h3>
+<script>   
+var sec = 0
+var min = 0
+var hour = 0
+var tired;
+
+function clockrun(){
+    sec++
+    if(sec == 60)
+{
+    sec = 0;
+    min++
+}
+if (min == 60){
+    min = 0
+    hour++
+}
+
+    var time = hour + ":" + min + ":" + sec
+    document.getElementById("time").innerHTML = time;
+}
+function start(){
+ tired =   setInterval(clockrun, 1000)
+}
+function pause()
+{
+  clearInterval(tired)  
+}
+
+
+function reset()
+{
+document.getElementById("time").innerHTML="00:00:00"
+clearInterval(tired)  
+var sec = 0
+var min = 0
+var hour = 0
+}
+
+
+ </script>
+    </body>
+</html
